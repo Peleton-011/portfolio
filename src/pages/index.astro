@@ -1,5 +1,8 @@
 ---
 import Badge from "../components/Badge.astro";
+import GitHubIcon from "../components/icons/GitHubIcon.astro";
+import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
+import SocialPill from "../components/SocialPill.astro";
 import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
 ---
@@ -28,6 +31,25 @@ import "../styles/global.css";
 					tecnologías de vanguardia.
 				</span>
 			</h2>
+
+			<nav>
+				<ul class="flex gap-x-2">
+					<li>
+						<SocialPill
+							href="https://www.linkedin.com/in/nico-diaz-andreu-19b339279/"
+						>
+							<LinkedInIcon class="w-6 h-6" />
+							LinkedIn
+						</SocialPill>
+					</li>
+					<li>
+						<SocialPill href="https://github.com/Peleton-011">
+							<GitHubIcon class="w-6 h-6" />
+							GitHub
+						</SocialPill>
+					</li>
+				</ul>
+			</nav>
 		</section>
 	</main>
 </Layout>
