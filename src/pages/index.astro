@@ -2,12 +2,16 @@
 import Badge from "../components/Badge.astro";
 import GitHubIcon from "../components/icons/GitHubIcon.astro";
 import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
+import MailIcon from "../components/icons/MailIcon.astro";
 import SocialPill from "../components/SocialPill.astro";
 import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
 ---
 
-<Layout title="Nico Diaz">
+<Layout
+	title="Porfolio de Nico - Desarrollador y Programador Web"
+	description="Contrata a Nico para crear tu aplicación web o móvil. Desarrollador Web y Programador en Barcelona. Especializado en crear aplicaciones web únicas."
+>
 	<main>
 		<section class="w-full lg:w-[740px] mx-auto py-44">
 			<h1
@@ -38,14 +42,20 @@ import "../styles/global.css";
 						<SocialPill
 							href="https://www.linkedin.com/in/nico-diaz-andreu-19b339279/"
 						>
-							<LinkedInIcon class="w-6 h-6" />
+							<LinkedInIcon class="size-6" />
 							LinkedIn
 						</SocialPill>
 					</li>
 					<li>
 						<SocialPill href="https://github.com/Peleton-011">
-							<GitHubIcon class="w-6 h-6" />
+							<GitHubIcon class="size-6" />
 							GitHub
+						</SocialPill>
+					</li>
+					<li>
+						<SocialPill href="mailto:nicodiazan@gmail.com">
+							<MailIcon class="size-6" />
+							nicodiazan@gmail.com
 						</SocialPill>
 					</li>
 				</ul>

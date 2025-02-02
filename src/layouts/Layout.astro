@@ -10,10 +10,19 @@ import "@fontsource-variable/onest";
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<meta name="description" content={Astro.props.description} />
+		<title>{Astro.props.title}</title>
 	</head>
-	<body >
-        <div class="relative h-full w-full bg-slate-950"><div class="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div><div class="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"></div></div>
+	<body>
+		<div class="relative h-full w-full bg-slate-950">
+			<div
+				class="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"
+			>
+			</div><div
+				class="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"
+			>
+			</div>
+		</div>
 		<Header />
 		<slot />
 	</body>
@@ -28,7 +37,7 @@ import "@fontsource-variable/onest";
 		font-family: "Onest Variable", system-ui, "Helvetica Neue", sans-serif;
 	}
 	body {
-        overflow-x: hidden;
+		overflow-x: hidden;
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
