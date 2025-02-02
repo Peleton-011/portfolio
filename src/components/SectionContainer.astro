@@ -1,3 +1,13 @@
-<section class=`w-full lg:w-[740px] mx-auto ${Astro.props.class}`>
-    <slot />
+---
+interface Props {
+	class?: string;
+	id?: string;
+}
+---
+
+<section
+	id={Astro.props.id}
+	class=`w-full lg:w-[740px] mx-auto ${Astro.props.class}`
+>
+	<slot />
 </section>
