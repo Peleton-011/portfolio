@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header.astro";
+import "@fontsource-variable/onest";
 ---
 
 <!doctype html>
@@ -12,24 +13,24 @@ import Header from "../components/Header.astro";
 		<title>Astro Basics</title>
 	</head>
 	<body>
+        Sphinx of black quartz, judge my vow
 		<Header />
 		<slot />
 	</body>
 </html>
 
 <style is:global>
-    
-    :root {
-        color-scheme: light dark;
-    }
+	:root {
+		color-scheme: light dark;
+	}
 
 	html {
-		font-family: system-ui, "Helvetica Neue", sans-serif;
+		font-family: "Onest Variable",system-ui, "Helvetica Neue", sans-serif;
 	}
 	body {
 		background: #050505;
 		display: flex;
 		justify-content: center;
-        min-height: 100vh;
+		min-height: 100vh;
 	}
 </style>
