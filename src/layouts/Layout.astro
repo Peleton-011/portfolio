@@ -18,13 +18,18 @@ import Header from "../components/Header.astro";
 </html>
 
 <style is:global>
+    
+    :root {
+        color-scheme: light dark;
+    }
+
 	html {
-		background: #000;
-		color: aliceblue;
 		font-family: system-ui, "Helvetica Neue", sans-serif;
 	}
 	body {
+		background: #050505;
 		display: flex;
 		justify-content: center;
+        min-height: 100vh;
 	}
 </style>
