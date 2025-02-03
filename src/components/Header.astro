@@ -1,11 +1,26 @@
-<header class="flex justify-center items-center py-5 w-full xl:w-[1120px] mx-auto">
-	<nav>
-		<ul class="flex flex-row gap-x-10 opacity-80">
-			<li><a href="#top">Inicio</a></li>
-			<li><a href="#experience">Experiencia</a></li>
-			<li><a href="#projects">Proyectos</a></li>
-			<li><a href="#about">Sobre mí</a></li>
-			<li><a href="#contact">Contacto</a></li>
-		</ul>
-	</nav>
-</header>
+<div>
+	<!-- SCROLL WRAPPER -->
+	<div class="sticky top-0 h-1 group"></div>
+
+	<header
+		class=`
+        flex justify-center items-center
+        fixed top-5 left-1/2 -translate-x-1/2 
+        z-50
+        w-auto px-6 py-2 
+        transition-all duration-300
+        bg-white/0 shadow-none rounded-full 
+        backdrop-blur-sm
+        group-[.sticky]:bg-[#1c1b22]/80 group-[.sticky]:shadow-lg`
+	>
+		<nav>
+			<ul class="flex flex-row gap-x-10 opacity-80 sm:justify-end">
+				<li class="hidden md:block"><a href="#top">Inicio</a></li>
+				<li class="hidden md:block"><a href="#experience">Experiencia</a></li>
+				<li class="hidden md:block"><a href="#projects">Proyectos</a></li>
+				<li class="hidden md:block"><a href="#about">Sobre mí</a></li>
+				<li class="hidden md:block" ><a href="#contact">Contacto</a></li>
+			</ul>
+		</nav>
+	</header>
+</div>
