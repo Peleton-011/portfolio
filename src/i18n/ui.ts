@@ -1,29 +1,31 @@
 export const LANGUAGES = [
 	{
 		name: "Español",
-        code: "es",
+		code: "es",
 		location: "España",
 		icon: "ESSpanishIcon",
 	},
 	{
 		name: "English",
-        code: "en",
+		code: "en",
 		location: "US",
 		icon: "USEnglishIcon",
 	},
-    {
-        name: "Català",
-        code: "ca",
-        location: "Catalunya",
-        icon: "CatalanIcon",
-    }
-]
+	{
+		name: "Català",
+		code: "ca",
+		location: "Catalunya",
+		icon: "CatalanIcon",
+	},
+];
 
-export const languages = {
-	en: "English",
-	es: "Español",
-	ca: "Català",
-};
+export const languages = LANGUAGES.reduce(
+	(acc: { [key: string]: any }, language) => {
+		acc[language.code] = language;
+		return acc;
+	},
+	{}
+);
 
 export const defaultLang = "es";
 

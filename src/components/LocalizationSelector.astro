@@ -1,5 +1,6 @@
 ---
 import { LANGUAGES } from "../i18n/ui";
+const languages = await Astro.glob('./languages/*.astro');
 
 const LOADED_LANGUAGES = await Promise.all(
 	LANGUAGES.map((c) => import("./languages/" + c.icon + ".astro"))
@@ -61,7 +62,7 @@ const { showName, showLocation } = Astro.props;
 						>
 							<div class="inline-flex items-center">
 								{language.icon && (
-									<language.icon class="size-7 me-3" />
+									<language.icon.default class="size-7 me-3" client:load/>
 								)}
 								{showName && (
 									<span class="hidden md:block">
