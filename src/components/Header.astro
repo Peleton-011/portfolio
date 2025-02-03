@@ -12,6 +12,7 @@ const t = useTranslations(lang);
 
 	<header
 		class=`
+        hidden md:block
         flex justify-center items-center
         fixed top-5 left-3/4 md:left-1/2 -translate-x-1/2 
         z-50
@@ -21,23 +22,23 @@ const t = useTranslations(lang);
         backdrop-blur-sm
         group-[.sticky]:bg-[#1c1b22]/80 group-[.sticky]:shadow-lg`
 	>
-		<nav>
+		<nav >
 			<ul
 				class="flex flex-row items-center gap-x-5 lg:gap-x-10 opacity-80"
 			>
-				<li class="hidden md:block">
+				<li>
 					<a href="#top">{t("nav.home")}</a>
 				</li>
-				<li class="hidden md:block">
+				<li>
 					<a href="#experience">{t("nav.experience")}</a>
 				</li>
-				<li class="hidden md:block">
+				<li>
 					<a href="#projects">{t("nav.projects")}</a>
 				</li>
-				<li class="hidden md:block text-nowrap">
+				<li class="text-nowrap">
 					<a href="#about">{t("nav.about")}</a>
 				</li>
-				<li class="hidden md:block">
+				<li>
 					<a href="mailto:nicodiazan@gmail.com">{t("nav.contact")}</a>
 				</li>
 				<!-- <li><ThemeToggle /></li> Remove until properly implemented -->
