@@ -30,7 +30,7 @@ const PROJECTS = [
 		image: "/website.webp",
 		tags: [TAGS.NEXT, TAGS.TAILWIND],
 	},
-    {
+	{
 		title: "Proyecto 2",
 		description: `
         Este es un proyecto de ejemplo. Desarrollado con Next.js y Tailwind CSS. Sus características son:
@@ -54,7 +54,7 @@ const PROJECTS = [
 			<img
 				class={`
                     rounded shadow-2xl shadow-black/20 
-                    ml-[${index % 2 === 0 ? "40px" : "-40px"}] mr-[${index % 2 === 0 ? "-40px" : "40px"}]
+                    ml-10 -mr-10
                     `}
 				src={image}
 				alt={`Captura de pantalla del proyecto ${title}`}
@@ -65,7 +65,7 @@ const PROJECTS = [
                 shadow-lg shadow-[rgba(31,38,135,0.37)] 
                 border border-white/5 rounded-lg 
                 p-4
-                ml-[${index % 2 === 0 ? "-40px" : "40px"}] mr-[${index % 2 === 0 ? "40px" : "-40px"}] mt-[-80px]
+                -ml-10 mr-10 -mt-20 mb-20
                 `}
 			>
 				<h3 class="text-2xl font-semibold text-yellow-200 mb-2">
