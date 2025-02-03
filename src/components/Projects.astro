@@ -30,29 +30,61 @@ const PROJECTS = [
 		image: "/website.webp",
 		tags: [TAGS.NEXT, TAGS.TAILWIND],
 	},
+    {
+		title: "Proyecto 2",
+		description: `
+        Este es un proyecto de ejemplo. Desarrollado con Next.js y Tailwind CSS. Sus características son:
+        - Desarrollado con Next.js
+        - Desarrollado con Tailwind CSS
+        - Desarrollado con Next.js
+        - Desarrollado con Tailwind CSS
+        Además de eso podrás ver una captura de pantalla del proyecto. 
+        `,
+		link: "#",
+		github: "#",
+		image: "/website.webp",
+		tags: [TAGS.NEXT, TAGS.TAILWIND],
+	},
 ];
 ---
 
 {
-	PROJECTS.map(({ title, description, link, github, image, tags }) => (
+	PROJECTS.map(({ title, description, link, github, image, tags }, index) => (
 		<article>
-			<h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
-			<p class="text-gray-400 text-pretty mb-4">{description}</p>
-			<ul class="flex gap-x-2 flex-row mb-4">
-				{tags.map((tag) => (
-					<li>
-						<span class={`flex items-center gap-x-2 rounded-full text-s py-1 px-2 ${tag.class}`}>
-							<tag.icon class="size-5" />
-							{tag.name}
-						</span>
-					</li>
-				))}
-			</ul>
 			<img
-				class="rounded shadow-2xl shadow-black/20"
+				class={`
+                    rounded shadow-2xl shadow-black/20 
+                    ml-[${index % 2 === 0 ? "40px" : "-40px"}] mr-[${index % 2 === 0 ? "-40px" : "40px"}]
+                    `}
 				src={image}
 				alt={`Captura de pantalla del proyecto ${title}`}
 			/>
+			<div
+				class={`
+                bg-[#1c1b22]/80 backdrop-blur-sm 
+                shadow-lg shadow-[rgba(31,38,135,0.37)] 
+                border border-white/5 rounded-lg 
+                p-4
+                ml-[${index % 2 === 0 ? "-40px" : "40px"}] mr-[${index % 2 === 0 ? "40px" : "-40px"}] mt-[-80px]
+                `}
+			>
+				<h3 class="text-2xl font-semibold text-yellow-200 mb-2">
+					{title}
+				</h3>
+				<p class="text-gray-400 text-pretty mb-4">{description}</p>
+				<ul class="flex gap-x-2 flex-row mb-4">
+					{tags.map((tag) => (
+						<li>
+							<span
+								class={`flex items-center gap-x-2 rounded-full text-s py-1 px-2 ${tag.class}`}
+							>
+								<tag.icon class="size-5" />
+								{tag.name}
+							</span>
+						</li>
+					))}
+				</ul>
+			</div>
 		</article>
 	))
 }
