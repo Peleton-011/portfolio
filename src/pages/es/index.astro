@@ -10,11 +10,16 @@ import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/Hero.astro";
 import "../../styles/global.css";
 import About from "../../components/About.astro";
+
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <Layout
-	title="Porfolio de Nico - Desarrollador y Programador Web"
-	description="Contrata a Nico para crear tu aplicación web o móvil. Desarrollador Web y Programador en Barcelona. Especializado en crear aplicaciones web únicas."
+	title={t("page.title")}
+	description={t("page.description")}
 >
 	<main class="px-4">
 		<SectionContainer
@@ -22,15 +27,15 @@ import About from "../../components/About.astro";
 		>
 			<Hero />
 		</SectionContainer>
-		<SectionContainer id="experience" title="Experiencia laboral">
+		<SectionContainer id="experience" title={t("sections.experience.title")}>
 			<BriefcaseIcon class="size-7" slot={"icon"} />
 			<Experience />
 		</SectionContainer>
-		<SectionContainer id="projects" title="Proyectos">
+		<SectionContainer id="projects" title={t("sections.projects.title")}>
 			<CodeIcon class="size-7" slot={"icon"} />
 			<Projects />
 		</SectionContainer>
-        <SectionContainer id="about" title="Sobre mí">
+        <SectionContainer id="about" title={t("sections.about.title")}>
             <AboutMeIcon class="size-7" slot={"icon"} />
             <About />
         </SectionContainer>
