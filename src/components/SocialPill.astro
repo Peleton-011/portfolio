@@ -3,13 +3,15 @@
 	target="_blank"
 	rel="noopener noreferrer"
 	class=`
-    rounded-full border border-white/10 
+    ${Astro.props.class}
+    rounded-full border border-black/10 dark:border-white/10 
     flex justify-center items-center gap-x-2 
     py-1 px-2 md:py-3 md:px-4 
+    z-50
     text-xs lg:text-base
-    bg-white/5 
+    bg-black/10 dark:bg-white/5 
     transition
-    hover:scale-110 hover:bg-white/10 
+    hover:scale-110 hover:bg-black/20 hover:dark:bg-white/10 hover 
     `
 >
 	<slot />
