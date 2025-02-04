@@ -3,11 +3,13 @@ import Experience from "../../components/experience/Experience.astro";
 import Footer from "../../components/Footer.astro";
 import BriefcaseIcon from "../../components/icons/BriefcaseIcon.astro";
 import CodeIcon from "../../components/icons/CodeIcon.astro";
+import AboutMeIcon from "../../components/icons/AboutMeIcon.astro";
 import Projects from "../../components/Projects.astro";
 import SectionContainer from "../../components/SectionContainer.astro";
 import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/Hero.astro";
 import "../../styles/global.css";
+import About from "../../components/About.astro";
 ---
 
 <Layout
@@ -28,6 +30,10 @@ import "../../styles/global.css";
 			<CodeIcon class="size-7" slot={"icon"} />
 			<Projects />
 		</SectionContainer>
+        <SectionContainer id="about" title="Sobre mí">
+            <AboutMeIcon class="size-7" slot={"icon"} />
+            <About />
+        </SectionContainer>
 		<Footer />
 	</main>
 </Layout>
