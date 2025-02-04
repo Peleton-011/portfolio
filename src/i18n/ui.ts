@@ -210,7 +210,7 @@ export const ui = {
 				},
 				{
 					type: "highlight",
-					text: "Pro &amp; Caguing ",
+					text: "Pro Caguing ",
 				},
 				{
 					type: "strong",
