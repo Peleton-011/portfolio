@@ -5,6 +5,11 @@ import Badge from "./Badge.astro";
 import LinkedInIcon from "./icons/LinkedInIcon.astro";
 import GitHubIcon from "./icons/GitHubIcon.astro";
 import MailIcon from "./icons/MailIcon.astro";
+
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <>
@@ -14,25 +19,24 @@ import MailIcon from "./icons/MailIcon.astro";
 			class="text-black dark:text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row items-center gap-x-4"
 		>
 			<MeImage class="size-16 block md:hidden" />
-			Hey, soy Nico <a
+			{t("hero.title")} <a
 				href="https://www.linkedin.com/in/nico-diaz-andreu-19b339279/"
 				target="_blank"
 				rel="noopener"
 				class="flex items-center justify-center"
-				><Badge>Disponible para trabajar</Badge></a
+				><Badge>{t("hero.available")}</Badge></a
 			>
 		</div>
 	</h1>
 	<h2 class="text-xl lg:text-2xl opacity-80 text-wrap max-w-[700px]">
 		<span class="text-purple-800/90 dark:text-purple-200/90">
-			+3 años de experiencia en Desarrollo Web.</span
+			{t("hero.experience")}</span
 		>
 		<span class="text-red-900/90 dark:text-red-100/90">
-			De Barcelona, España 🇪🇸.</span
+			{t("hero.location")}</span
 		>
 		<span class="opacity-85">
-			Especializado en crear aplicaciones web únicas con tecnologías de
-			vanguardia.
+			{t("hero.description")}
 		</span>
 	</h2>
 
