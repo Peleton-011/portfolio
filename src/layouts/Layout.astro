@@ -2,7 +2,7 @@
 import Header from "../components/Header.astro";
 import "@fontsource-variable/onest";
 
-import { getLangFromUrl } from '../i18n/utils';
+import { getLangFromUrl } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 ---
@@ -37,12 +37,20 @@ const lang = getLangFromUrl(Astro.url);
 		color-scheme: light dark;
 	}
 
+	html,
+	body {
+		width: 100vw;
+		height: 100vh;
+		margin: 0;
+		padding: 0;
+		overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+	}
+
 	html {
 		font-family: "Onest Variable", system-ui, "Helvetica Neue", sans-serif;
 		scroll-behavior: smooth;
 	}
 	body {
-		overflow-x: hidden;
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
