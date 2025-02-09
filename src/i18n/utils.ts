@@ -1,3 +1,4 @@
+
 import { ui, defaultLang } from './ui.ts';
 
 export function getLangFromUrl(url: URL) {

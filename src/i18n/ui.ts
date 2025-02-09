@@ -1,3 +1,4 @@
+
 import NextIcon from "../components/icons/NextIcon.astro";
 import TailwindIcon from "../components/icons/TailwindIcon.astro";
 
@@ -23,6 +24,7 @@ export const defaultLang = "es";
 
 export const ui = {
 	en: {
+
 		"page.title": "Nico's Portfolio - Web Developer and Programmer",
 		"page.description":
 			"Hire Nico to create your own web application or mobile app. Web Developer and Programmer in Barcelona. Proficient in creating unique web applications.",
@@ -101,11 +103,13 @@ export const ui = {
 		"page.description":
 			"Contrata a Nico para crear tu aplicación web o móvil. Desarrollador Web y Programador en Barcelona. Especializado en crear aplicaciones web únicas.",
 
+
 		"nav.home": "Inicio",
 		"nav.about": "Sobre mí",
 		"nav.contact": "Contacto",
 		"nav.projects": "Proyectos",
 		"nav.experience": "Experiencia",
+
 
 		"sections.experience.title": "Experiencia laboral",
 		"sections.projects.title": "Proyectos",
