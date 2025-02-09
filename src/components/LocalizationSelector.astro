@@ -1,8 +1,5 @@
 ---
-// import USEnglishIcon from "./languages/USEnglishIcon.astro";
-// import ESSpanishIcon from "./languages/ESSpanishIcon.astro";
-
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { getLangFromUrl } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 
@@ -14,80 +11,81 @@ const LANGUAGES = [
 		code: "en",
 	},
 	{
-		name: "Español",
-		location: "España",
+		name: "Español",
+		location: "España",
 		icon: "🇪🇸",
 		code: "es",
 	},
 ];
 
 interface props {
-	showName?: boolean;
-	showLocation?: boolean;
+	ddshowName?: boolean;
+	ddshowLocation?: boolean;
+	btnshowName?: boolean;
+	btnshowLocation?: boolean;
 }
 
-const { showName, showLocation } = Astro.props;
+const { ddshowName, ddshowLocation, btnshowName, btnshowLocation } =
+	Astro.props;
 ---
 
-<div
-	class="flex items-center md:order-2 space-x-1 md:space-x-0 rtl:space-x-reverse"
->
-	<script
-		src="https://cdn.jsdelivr.net/npm/flowbite@3.1.1/dist/flowbite.min.js"
-	></script>
-	<!-- Default language -->
-	<button
-		type="button"
-		data-dropdown-toggle="language-dropdown-menu"
-		class="inline-flex items-center font-medium justify-center text-sm rounded-lg cursor-pointer"
+<details class="relative opacity-100">
+	<summary
+		class="inline-flex items-center font-medium justify-center text-sm rounded-lg cursor-pointer list-none"
 	>
 		{
-			LANGUAGES.filter((v, i) => v.code === lang).map((language) => (
+			LANGUAGES.filter((v) => v.code === lang).map((language) => (
 				<>
-					<span class="text-2xl">{language.icon}</span>
-					{showName && (
-						<span class="hidden md:block">{language.name}</span>
+					{language.icon && (
+						<span class="text-2xl">{language.icon} </span>
 					)}
-					{showLocation && (
-						<span class="hidden lg:block">
-							&nbsp; ({language.location})
+
+					{btnshowName && (
+						<span class="hidden md:block ml-2">
+							{language.name}
+						</span>
+					)}
+					{btnshowLocation && (
+						<span class="hidden lg:block ml-2">
+							({language.location})
 						</span>
 					)}
 				</>
 			))
 		}
-	</button>
+	</summary>
+
 	<!-- Dropdown -->
-	<div
-		class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm dark:bg-gray-700"
-		id="language-dropdown-menu"
+	<ul
+		class={`absolute left-0 mt-2 rounded-lg shadow-lg backdrop-blur-sm
+        bg-[#1c1b22]/80 `}
 	>
-		<ul class="py-2 font-medium" role="none">
-			{
-				LANGUAGES.map((language) => (
-					<li>
-						<a
-							href="#"
-							class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
-							role="menuitem"
-						>
-							<div class="inline-flex items-center">
-								<span class="text-2xl">{language.icon}</span>
-								{showName && (
-									<span class="hidden md:block">
-										{language.name}
-									</span>
-								)}
-								{showLocation && (
-									<span class="hidden lg:block">
-										&nbsp; ({language.location})
-									</span>
-								)}
-							</div>
-						</a>
-					</li>
-				))
-			}
-		</ul>
-	</div>
-</div>
+		{
+			LANGUAGES.map((language) => (
+				<li>
+					<a
+						href="#"
+						class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+					>
+						<div class="inline-flex items-center">
+							{language.icon && (
+								<span class="text-2xl">{language.icon} </span>
+							)}
+
+							{ddshowName && (
+								<span class="hidden md:block ml-2">
+									{language.name}
+								</span>
+							)}
+							{ddshowLocation && (
+								<span class="hidden lg:block ml-2">
+									({language.location})
+								</span>
+							)}
+						</div>
+					</a>
+				</li>
+			))
+		}
+	</ul>
+</details>
