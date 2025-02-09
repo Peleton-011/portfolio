@@ -2,6 +2,7 @@
 import LocalizationSelector from "./LocalizationSelector.astro";
 
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import ThemeToggle from "./ThemeToggle.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -43,10 +44,8 @@ const t = useTranslations(lang);
 					<a href="mailto:nicodiazan@gmail.com">{t("nav.contact")}</a>
 				</li>
 				<li><ThemeToggle /></li>
-        <li><LocalizationSelector /></li>
+				<li><LocalizationSelector /></li>
 			</ul>
 		</nav>
-
-
 	</header>
 </div>
