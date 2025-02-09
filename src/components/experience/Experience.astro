@@ -1,28 +1,23 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro";
 
-const EXPERIENCE = [
-	{
-		date: "Actualmente ...",
-		title: "Desarrollador Web y Programador Freelance",
-		description: `Responsable de la creación y mantenimiento de sitios web y aplicaciones web.
-        Gestión de proyectos existentes y colaboración con clientes.`,
-	},
-	{
-		date: "2024",
-		title: "Desarrollador Principal — Spoloom",
-		description: `Responsable de la plataforma, componentes y utilidades para la página de e-commerce y de aprendizaje digital de Spoloom. 
-            Implementación de cero de una página custom de e-commerce integrada con Stripe y conectada a la API de Shopify Oxygen como Sistema de Manejo de Contenido. 
-            Implementación de cero de un sistema de aprendizaje digital con seguimiento de progreso en los distintos niveles incluyendo un reproductor de vídeo custom. 
-            Mejora de un 60% en la velocidad de carga.`,
-		// link: "#",
-	},
-];
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+interface experience {
+	title: string;
+	description: string;
+	link?: string;
+    repo?: string;
+	date: string;
+}
 ---
 
 <ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">
 	{
-		EXPERIENCE.map((experience) => (
+		(t("experience") as unknown as experience[]).map((experience) => (
 			<li class="mb-10 ms-4">
 				<ExperienceItem {...experience} />
 			</li>

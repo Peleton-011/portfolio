@@ -1,58 +1,63 @@
 ---
-import NextIcon from "./icons/NextIcon.astro";
-import TailwindIcon from "./icons/TailwindIcon.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
-const TAGS = {
-	NEXT: {
-		name: "Next.js",
-		class: "bg-black text-white",
-		icon: NextIcon,
-	},
-	TAILWIND: {
-		name: "Tailwind CSS",
-		class: "bg-[#003159] text-white",
-		icon: TailwindIcon,
-	},
-};
-const PROJECTS = [
-	{
-		title: "Proyecto 1",
-		description: `
-        Este es un proyecto de ejemplo. Desarrollado con Next.js y Tailwind CSS. Sus características son:
-        - Desarrollado con Next.js
-        - Desarrollado con Tailwind CSS
-        - Desarrollado con Next.js
-        - Desarrollado con Tailwind CSS
-        Además de eso podrás ver una captura de pantalla del proyecto. 
-        `,
-		link: "#",
-		github: "#",
-		image: "/website.webp",
-		tags: [TAGS.NEXT, TAGS.TAILWIND],
-	},
-];
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+interface project {
+    title: string,
+    description: string,
+    link?: string,
+    github?: string,
+    image: string,
+    tags: {
+        name: string,
+        class: string,
+        icon: any
+    }[]
+}
 ---
 
 {
-	PROJECTS.map(({ title, description, link, github, image, tags }) => (
-		<article>
-			<h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
-			<p class="text-gray-400 text-pretty mb-4">{description}</p>
-			<ul class="flex gap-x-2 flex-row mb-4">
-				{tags.map((tag) => (
-					<li>
-						<span class={`flex items-center gap-x-2 rounded-full text-s py-1 px-2 ${tag.class}`}>
-							<tag.icon class="size-5" />
-							{tag.name}
-						</span>
-					</li>
-				))}
-			</ul>
-			<img
-				class="rounded shadow-2xl shadow-black/20"
-				src={image}
-				alt={`Captura de pantalla del proyecto ${title}`}
-			/>
-		</article>
-	))
+	(t("projects") as unknown as project[]).map(
+		({ title, description, link, github, image, tags }, index) => (
+			<article>
+				<img
+					class={`
+                    rounded shadow-2xl shadow-black/20 
+                    lg:ml-10 lg:-mr-10
+                    w-full
+                    `}
+					src={image}
+					alt={`Captura de pantalla del proyecto ${title}`}
+				/>
+				<div
+					class={`
+                bg-[#1c1b22]/80 backdrop-blur-sm 
+                lg:shadow-lg lg:shadow-[rgba(31,38,135,0.37)] 
+                lg:border lg:border-white/5 rounded-lg 
+                p-4
+                lg:-ml-10 lg:mr-10 lg:-mt-20 lg:mb-20
+                `}
+				>
+					<h3 class="text-2xl font-semibold text-yellow-200 mb-2">
+						{title}
+					</h3>
+					<p class="text-gray-400 text-pretty mb-4">{description}</p>
+					<ul class="flex gap-x-2 flex-row mb-4">
+						{tags.map((tag) => (
+							<li>
+								<span
+									class={`flex items-center gap-x-2 rounded-full text-s py-1 px-2 ${tag.class}`}
+								>
+									<tag.icon class="size-5" />
+									{tag.name}
+								</span>
+							</li>
+						))}
+					</ul>
+				</div>
+			</article>
+		)
+	)
 }

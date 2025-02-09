@@ -1,10 +1,14 @@
 ---
 import Header from "../components/Header.astro";
 import "@fontsource-variable/onest";
+
+import { getLangFromUrl } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -26,7 +30,7 @@ import "@fontsource-variable/onest";
 		</script>
 	</head>
 	<body>
-		<div class="relative h-full w-full bg-slate-950">
+		<div class="relative h-full w-full bg-slate-950 -z-10">
 			<div
 				class="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"
 			>
@@ -45,12 +49,20 @@ import "@fontsource-variable/onest";
 		color-scheme: light dark;
 	}
 
+	html,
+	body {
+		width: 100vw;
+		height: 100vh;
+		margin: 0;
+		padding: 0;
+		overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+	}
+
 	html {
 		font-family: "Onest Variable", system-ui, "Helvetica Neue", sans-serif;
 		scroll-behavior: smooth;
 	}
 	body {
-		overflow-x: hidden;
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
