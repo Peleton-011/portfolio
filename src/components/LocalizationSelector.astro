@@ -1,14 +1,25 @@
 ---
-import { LANGUAGES } from "../i18n/ui";
-const languages = await Astro.glob('./languages/*.astro');
+// import USEnglishIcon from "./languages/USEnglishIcon.astro";
+// import ESSpanishIcon from "./languages/ESSpanishIcon.astro";
 
-const LOADED_LANGUAGES = await Promise.all(
-	LANGUAGES.map((c) => import("./languages/" + c.icon + ".astro"))
-);
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
-console.log("ABC")
+const lang = getLangFromUrl(Astro.url);
 
-console.log(LOADED_LANGUAGES);
+const LANGUAGES = [
+	{
+		name: "English",
+		location: "United States",
+		icon: "🇺🇸",
+		code: "en",
+	},
+	{
+		name: "Español",
+		location: "España",
+		icon: "🇪🇸",
+		code: "es",
+	},
+];
 
 interface props {
 	showName?: boolean;
@@ -31,9 +42,9 @@ const { showName, showLocation } = Astro.props;
 		class="inline-flex items-center font-medium justify-center text-sm rounded-lg cursor-pointer"
 	>
 		{
-			LOADED_LANGUAGES.filter((v, i) => i === 0).map((language) => (
+			LANGUAGES.filter((v, i) => v.code === lang).map((language) => (
 				<>
-					{language.icon && <language.icon.default class="size-7 me-3" />}
+					<span class="text-2xl">{language.icon}</span>
 					{showName && (
 						<span class="hidden md:block">{language.name}</span>
 					)}
@@ -53,7 +64,7 @@ const { showName, showLocation } = Astro.props;
 	>
 		<ul class="py-2 font-medium" role="none">
 			{
-				LOADED_LANGUAGES.map((language) => (
+				LANGUAGES.map((language) => (
 					<li>
 						<a
 							href="#"
@@ -61,9 +72,7 @@ const { showName, showLocation } = Astro.props;
 							role="menuitem"
 						>
 							<div class="inline-flex items-center">
-								{language.icon && (
-									<language.icon.default class="size-7 me-3" client:load/>
-								)}
+								<span class="text-2xl">{language.icon}</span>
 								{showName && (
 									<span class="hidden md:block">
 										{language.name}
