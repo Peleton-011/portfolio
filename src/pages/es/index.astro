@@ -1,15 +1,6 @@
 ---
-import Experience from "../../components/experience/Experience.astro";
-import Footer from "../../components/Footer.astro";
-import BriefcaseIcon from "../../components/icons/BriefcaseIcon.astro";
-import CodeIcon from "../../components/icons/CodeIcon.astro";
-import AboutMeIcon from "../../components/icons/AboutMeIcon.astro";
-import Projects from "../../components/Projects.astro";
-import SectionContainer from "../../components/SectionContainer.astro";
-import Layout from "../../layouts/Layout.astro";
-import Hero from "../../components/Hero.astro";
 import "../../styles/global.css";
-import About from "../../components/About.astro";
+import Layout from "../../layouts/Layout.astro";
 
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
@@ -21,24 +12,5 @@ const t = useTranslations(lang);
 	title={t("page.title")}
 	description={t("page.description")}
 >
-	<main class="px-4">
-		<SectionContainer
-			class="py-44 pb-24 flex flex-row justify-between items-center lg:w-[1120px]"
-		>
-			<Hero />
-		</SectionContainer>
-		<SectionContainer id="experience" title={t("sections.experience.title")}>
-			<BriefcaseIcon class="size-7" slot={"icon"} />
-			<Experience />
-		</SectionContainer>
-		<SectionContainer id="projects" title={t("sections.projects.title")}>
-			<CodeIcon class="size-7" slot={"icon"} />
-			<Projects />
-		</SectionContainer>
-        <SectionContainer id="about" title={t("sections.about.title")}>
-            <AboutMeIcon class="size-7" slot={"icon"} />
-            <About />
-        </SectionContainer>
-		<Footer />
-	</main>
+
 </Layout>
