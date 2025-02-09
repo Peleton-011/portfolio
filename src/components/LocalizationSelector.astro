@@ -29,7 +29,7 @@ const { ddshowName, ddshowLocation, btnshowName, btnshowLocation } =
 	Astro.props;
 ---
 
-<details class="relative opacity-100">
+<details class="relative">
 	<summary
 		class="inline-flex items-center font-medium justify-center text-sm rounded-lg cursor-pointer list-none"
 	>
@@ -57,8 +57,12 @@ const { ddshowName, ddshowLocation, btnshowName, btnshowLocation } =
 
 	<!-- Dropdown -->
 	<ul
-		class={`absolute left-0 mt-2 rounded-lg shadow-lg backdrop-blur-sm
-        bg-[#1c1b22]/80 `}
+		class={`
+        absolute left-0 mt-2 rounded-lg shadow-lg backdrop-blur-sm
+        text-black dark:text-white
+        bg-[#706295]/20
+        dark:bg-[#1c1b22]/80 
+        `}
 	>
 		{
 			LANGUAGES.map((language) => (

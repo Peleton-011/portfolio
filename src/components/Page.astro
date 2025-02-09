@@ -9,29 +9,31 @@ import SectionContainer from "./SectionContainer.astro";
 import Hero from "./Hero.astro";
 import About from "./About.astro";
 
-import { getLangFromUrl, useTranslations } from "../i18n/utils"; 
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<main class="px-4">
-    <SectionContainer
-        class="py-44 pb-24 flex flex-row justify-between items-center lg:w-[1120px]"
-    >
-        <Hero />
-    </SectionContainer>
-    <SectionContainer id="experience" title={t("sections.experience.title")}>
-        <BriefcaseIcon class="size-7" slot={"icon"} />
-        <Experience />
-    </SectionContainer>
-    <SectionContainer id="projects" title={t("sections.projects.title")}>
-        <CodeIcon class="size-7" slot={"icon"} />
-        <Projects />
-    </SectionContainer>
-    <SectionContainer id="about" title={t("sections.about.title")}>
-        <AboutMeIcon class="size-7" slot={"icon"} />
-        <About />
-    </SectionContainer>
-    <Footer />
+<main class="px-4 text-black dark:text-white">
+	<div class="-mx-4 my-30 w-[100vw] bg-[#706295]/30 dark:bg-white/0">
+		<SectionContainer
+			class="py-14 z-10 flex flex-row justify-between items-center lg:w-[1120px]"
+		>
+			<Hero />
+		</SectionContainer>
+	</div>
+	<SectionContainer id="experience" title={t("sections.experience.title")}>
+		<BriefcaseIcon class="size-7" slot={"icon"} />
+		<Experience />
+	</SectionContainer>
+	<SectionContainer id="projects" title={t("sections.projects.title")}>
+		<CodeIcon class="size-7" slot={"icon"} />
+		<Projects />
+	</SectionContainer>
+	<SectionContainer id="about" title={t("sections.about.title")}>
+		<AboutMeIcon class="size-7" slot={"icon"} />
+		<About />
+	</SectionContainer>
+	<Footer />
 </main>

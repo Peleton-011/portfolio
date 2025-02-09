@@ -30,7 +30,10 @@ const lang = getLangFromUrl(Astro.url);
 		</script>
 	</head>
 	<body>
-		<div class="relative h-full w-full bg-slate-950 -z-10">
+        <!-- vv BG's -->
+		<div
+			class="hidden dark:block relative h-full w-full bg-slate-950 -z-10"
+		>
 			<div
 				class="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]"
 			>
@@ -39,6 +42,11 @@ const lang = getLangFromUrl(Astro.url);
 			>
 			</div>
 		</div>
+		<div
+			class="block dark:hidden absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)]"
+		>
+		</div>
+        <!-- ^^ BG's -->
 		<Header />
 		<slot />
 	</body>
@@ -62,6 +70,7 @@ const lang = getLangFromUrl(Astro.url);
 		font-family: "Onest Variable", system-ui, "Helvetica Neue", sans-serif;
 		scroll-behavior: smooth;
 	}
+    
 	body {
 		display: flex;
 		flex-direction: column;
