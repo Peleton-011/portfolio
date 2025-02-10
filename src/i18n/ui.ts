@@ -29,6 +29,11 @@ export const TAGS = {
 		class: "bg-[#1572B6] text-white",
 		icon: CSSIcon,
 	},
+    CSSMODULES: {
+        name: "CSS Modules",
+        class: "bg-[#1572B6] text-white",
+        icon: CSSIcon,
+    },
 	HTML: {
 		name: "HTML",
 		class: "bg-[#E34C26] text-white",
@@ -128,7 +133,7 @@ Bowlly Eats is a modern and high-performance recipe web app built with Nuxt 3 an
 				link: "https://bowlly-eats.vercel.app",
 				github: "https://github.com/Peleton-011/bowlly-eats",
 				image: "/website.webp",
-				tags: [TAGS.NEXT, TAGS.TAILWIND],
+				tags: [TAGS.NUXT, TAGS.VUE, TAGS.TS, TAGS.TAILWIND],
 			},
 			{
 				title: "Chat-GPT prompt splitter",
@@ -138,7 +143,7 @@ Bowlly Eats is a modern and high-performance recipe web app built with Nuxt 3 an
 				link: "https://chat-gpt-prompt-splitter-alpha.vercel.app/",
 				github: "https://github.com/Peleton-011/chatGPT-prompt-splitter",
 				image: "/website.webp",
-				tags: [TAGS.NEXT, TAGS.TAILWIND],
+				tags: [TAGS.NEXT, TAGS.TS, TAGS.VITE],
 			},
 			{
 				title: "Snap Quest",
@@ -147,7 +152,7 @@ SnapQuest is an interactive photo scavenger hunt game designed for speed, perfor
 				link: "https://snap-quest-pink.vercel.app/",
 				github: "https://github.com/Peleton-011/snap-quest/",
 				image: "/website.webp",
-				tags: [TAGS.NEXT, TAGS.TAILWIND],
+				tags: [TAGS.NEXT, TAGS.REACT, TAGS.TS, TAGS.MONGODB],
 			},
 			{
 				title: "Etch a Sketch",
@@ -157,7 +162,7 @@ Etch-a-Sketch Playground is a modern, high-performance web-based drawing tool th
 				link: "https://peleton-011.github.io/etch-a-sketch-project/",
 				github: "https://github.com/Peleton-011/etch-a-sketch-project",
 				image: "/website.webp",
-				tags: [TAGS.NEXT, TAGS.TAILWIND],
+				tags: [TAGS.HTML, TAGS.CSS, TAGS.JS],
 			},
 			{
 				title: "HouseHold Hero",
@@ -167,7 +172,7 @@ Etch-a-Sketch Playground is a modern, high-performance web-based drawing tool th
 				link: "",
 				github: "https://github.com/Peleton-011/chore-tracker/",
 				image: "/website.webp",
-				tags: [TAGS.NEXT, TAGS.TAILWIND],
+				tags: [TAGS.NEXT, TAGS.TS, TAGS.TAILWIND, TAGS.NODE, TAGS.MONGODB, TAGS.CLERK],
 			},
 			{
 				title: "Minesweeper",
@@ -177,7 +182,7 @@ A sleek and high-performance Minesweeper game built with React, featuring custom
 				link: "https://minesweeper-lake-six.vercel.app/",
 				github: "https://github.com/Peleton-011/minesweeper",
 				image: "/website.webp",
-				tags: [TAGS.NEXT, TAGS.TAILWIND],
+				tags: [TAGS.REACT, TAGS.CSSMODULES, TAGS.VITE],
 			},
 
 			{
@@ -188,7 +193,7 @@ A sleek and high-performance Minesweeper game built with React, featuring custom
 				link: "",
 				github: "https://github.com/Peleton-011/portfolio",
 				image: "/website.webp",
-				tags: [TAGS.NEXT, TAGS.TAILWIND],
+				tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.TS],
 			},
 		],
 
