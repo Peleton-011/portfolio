@@ -1,20 +1,24 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import GitHubIcon from "./icons/GitHubIcon.astro";
+import LinkIcon from "./icons/LinkIcon.astro";
+import LinkButton from "./LinkButton.astro";
+import SocialPill from "./SocialPill.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 interface project {
-    title: string,
-    description: string,
-    link?: string,
-    github?: string,
-    image: string,
-    tags: {
-        name: string,
-        class: string,
-        icon: any
-    }[]
+	title: string;
+	description: string;
+	link?: string;
+	github?: string;
+	image: string;
+	tags: {
+		name: string;
+		class: string;
+		icon: any;
+	}[];
 }
 ---
 
@@ -44,19 +48,35 @@ interface project {
 					<h3 class="text-2xl font-semibold text-purple-900 dark:text-yellow-200 mb-2">
 						{title}
 					</h3>
-					<p class="text-black dark:text-gray-400 text-pretty mb-4">{description}</p>
 					<ul class="flex gap-x-2 flex-row mb-4">
 						{tags.map((tag) => (
 							<li>
 								<span
-									class={`flex items-center gap-x-2 rounded-full text-s py-1 px-2 ${tag.class}`}
+									class={`flex items-center gap-x-2 rounded-full text-xs py-1 px-2 ${tag.class}`}
 								>
-									<tag.icon class="size-5" />
+									<tag.icon class="size-4" />
 									{tag.name}
 								</span>
 							</li>
 						))}
 					</ul>
+					<p class="text-black dark:text-gray-400 text-pretty mb-4">
+						{description}
+					</p>
+                    <div>
+                        {link && (
+                            <LinkButton href={link} class="me-4">
+                                <LinkIcon />
+                                {t("projects.links.preview")}
+                            </LinkButton>
+                        )}
+                        {github && (
+                            <LinkButton href={github}>
+                                <GitHubIcon />
+                                {t("projects.links.github")}
+                            </LinkButton>
+                        )}
+                    </div>
 				</div>
 			</article>
 		)
