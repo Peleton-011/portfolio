@@ -26,15 +26,29 @@ interface project {
 	(t("projects") as unknown as project[]).map(
 		({ title, description, link, github, image, tags }, index) => (
 			<article>
-				<img
+				<div
 					class={`
-                    rounded shadow-2xl shadow-black/20 
+                    group
+                    shadow-2xl shadow-black/20 
                     lg:ml-10 lg:-mr-10
                     w-full
+                    rounded
+                    overflow-hidden
+                    md:hover:scale-105
+                    duration-300
+                    transition
                     `}
-					src={image}
-					alt={`Captura de pantalla del proyecto ${title}`}
-				/>
+				>
+					<img
+						class={`
+                        md:group-hover:scale-110
+                        transition
+                        duration-300
+                        `}
+						src={image}
+						alt={`Captura de pantalla del proyecto ${title}`}
+					/>
+				</div>
 				<div
 					class={`
                 bg-[#d4cfdf]/70 dark:bg-[#1c1b22]/80  
@@ -63,20 +77,20 @@ interface project {
 					<p class="text-black dark:text-gray-400 text-pretty mb-4">
 						{description}
 					</p>
-                    <div>
-                        {link && (
-                            <LinkButton href={link} class="me-4">
-                                <LinkIcon />
-                                {t("projects.links.preview")}
-                            </LinkButton>
-                        )}
-                        {github && (
-                            <LinkButton href={github}>
-                                <GitHubIcon />
-                                {t("projects.links.github")}
-                            </LinkButton>
-                        )}
-                    </div>
+					<div>
+						{link && (
+							<LinkButton href={link} class="me-4">
+								<LinkIcon />
+								{t("projects.links.preview")}
+							</LinkButton>
+						)}
+						{github && (
+							<LinkButton href={github}>
+								<GitHubIcon />
+								{t("projects.links.github")}
+							</LinkButton>
+						)}
+					</div>
 				</div>
 			</article>
 		)
