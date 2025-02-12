@@ -53,6 +53,59 @@ export const ui = {
 				//repo: "#"
 			},
 		],
+
+        about: [
+            [
+                {
+                    type: "normal",
+                    text: "Hi, my name is Nico, and I’m a ",
+                },
+                {
+                    type: "strong",
+                    text: "fullstack developer. ",
+                },
+                {
+                    type: "normal",
+                    text: "My passion for programming started when I tried to make a game at 12 years old. Currently, ",
+                },
+                {
+                    type: "strong",
+                    text: "I maintain projects I’ve participated in.",
+                },
+            ],
+            [
+                {
+                    type: "normal",
+                    text: "I believe in the importance of writing ",
+                },
+                {
+                    type: "strong",
+                    text: "clean, scalable, and well-documented code. ",
+                },
+                {
+                    type: "normal",
+                    text: "I love learning new technologies and constantly improving my skills. ",
+                },
+            ],
+            [
+                {
+                    type: "normal",
+                    text: "When I'm not coding, I enjoy writing and playing video games.",
+                },
+            ],
+        ],
+        
+        "about.goodbye": [
+            {
+                type: "strong",
+                text: "If you have an interesting project in mind or just want to chat about development, ",
+            },
+            {
+                type: "highlight",
+                text: "reach out to me!",
+            },
+        ],
+        
 	},
 	es: {
 		"page.title": "Porfolio de Nico - Desarrollador y Programador Web",
@@ -104,53 +157,52 @@ export const ui = {
 			[
 				{
 					type: "normal",
-					text: "Me llamo Nico pero mis amigos me llaman Pingore. Empecé en la programación con un ordenatione, tenía 10 años. Actualmente estoy ",
+					text: "Hola, me llamo Nico y soy desarrollador ",
 				},
 				{
 					type: "strong",
-					text: "rascándome los mocos ",
+					text: "fullstack. ",
 				},
 				{
 					type: "normal",
-					text: ".",
+					text: "Mi pasión por la programación empezó intentando hacer un juego con 12 años. Actualmente ",
+				},
+				{
+					type: "strong",
+					text: "mantengo proyectos en los que he participado.",
 				},
 			],
 			[
 				{
 					type: "normal",
-					text: "Algunos de mis éxitos incluyen ",
+					text: "Creo en la importancia de escribir código  ",
 				},
 				{
 					type: "strong",
-					text: "colaborar con tu mama para crear tu dignidad ",
+					text: "limpio, escalable y bien documentado. ",
 				},
 				{
 					type: "normal",
-					text: ". Aunque hoy está desaparecida fue un gran avance en el mundo del desarrollo web.",
+					text: "Me encanta aprender nuevas tecnologías y mejorar constantemente mis habilidades. ",
 				},
 			],
 			[
 				{
 					type: "normal",
-					text: "Como creador de cacas, ",
-				},
-				{
-					type: "strong",
-					text: "cuento con el vater más grande del mundo en la categoría de ",
-				},
-				{
-					type: "highlight",
-					text: "Pro Caguing ",
-				},
-				{
-					type: "strong",
-					text: "en Twitch",
-				},
-				{
-					type: "normal",
-					text: ". Mi objetivo es mejorar la caca de la gente y el acceso a caca de calidad.",
+					text: "Cuando no estoy programando, me gusta escribir y jugar a videojuegos.",
 				},
 			],
+		],
+
+		"about.goodbye": [
+			{
+				type: "strong",
+				text: "Si tienes un proyecto interesante en mente o simplemente quieres charlar sobre desarrollo, ",
+			},
+			{
+				type: "highlight",
+				text: "¡escríbeme!",
+			},
 		],
 	},
 } as const;
