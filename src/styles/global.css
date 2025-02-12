@@ -1,3 +1,7 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+.textsection-container {
+	@apply [&>p]:mb-4 [&>p>strong]:text-purple-800 drop-shadow-sm  dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-bold [&>p>strong]:font-mono text-pretty order-2 md:order-1;
+}
