@@ -1,5 +1,6 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import TextSection from "./TextSection.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -10,32 +11,15 @@ interface subsection {
 }
 ---
 
+<div class="textsection-container">
 <article
 	class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row"
 >
-	<div
-		class="[&>p]:mb-4 [&>p>strong]:text-purple-800 drop-shadow-sm  dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-bold [&>p>strong]:font-mono text-pretty order-2 md:order-1"
+	<div class="textsection-container"
 	>
 		{
 			(t("about") as unknown as subsection[][]).map((section) => (
-				<p>
-					{section.map((subsection) => {
-						switch (subsection.type) {
-							case "strong":
-								return <strong>{subsection.text}</strong>;
-							case "highlight":
-								return (
-									<strong>
-										<em class="italic">
-											{subsection.text}
-										</em>
-									</strong>
-								);
-                            default:
-                                return subsection.text
-						}
-					})}
-				</p>
+                <TextSection section={section} />
 			))
 		}
 
@@ -58,3 +42,6 @@ interface subsection {
 		style="object-position: 50% 50%"
 	/>
 </article>
+<TextSection section={t("about.goodbye") as unknown as subsection[]} />
+</div>
+
