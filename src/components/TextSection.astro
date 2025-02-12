@@ -1,0 +1,31 @@
+---
+interface Props {
+	section: subsection[];
+}
+
+interface subsection {
+	type: string;
+	text: string;
+}
+
+const { section } = Astro.props;
+---
+
+<p>
+	{
+		section.map((subsection) => {
+			switch (subsection.type) {
+				case "strong":
+					return <strong>{subsection.text}</strong>;
+				case "highlight":
+					return (
+						<strong>
+							<em class="italic">{subsection.text}</em>
+						</strong>
+					);
+				default:
+					return subsection.text;
+			}
+		})
+	}
+</p>
