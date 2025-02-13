@@ -1,4 +1,4 @@
-import { T_PROJECTS } from "./projects";
+import { TRANSLATE_PROJECTS } from "./projects";
 
 export const languages = {
 	en: "English",
@@ -33,7 +33,7 @@ export const ui = {
 		"projects.links.preview": "Preview",
 		"projects.links.github": "Code",
 
-		projects: T_PROJECTS("en"),
+		projects: TRANSLATE_PROJECTS("en"),
 
 		experience: [
 			{
@@ -132,7 +132,7 @@ export const ui = {
 		"projects.links.preview": "Preview",
 		"projects.links.github": "Code",
 
-		projects: T_PROJECTS("es"),
+		projects: TRANSLATE_PROJECTS("es"),
 
 		experience: [
 			{

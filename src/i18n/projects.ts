@@ -138,7 +138,7 @@ A sleek and high-performance Minesweeper game built with React, featuring custom
 	},
 ];
 
-export const T_PROJECTS = (lang: string) => {
+export const TRANSLATE_PROJECTS = (lang: string) => {
 	return PROJECTS.map((project) => ({
 		...project,
 		description: project.description[lang],
