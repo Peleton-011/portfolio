@@ -1,6 +1,7 @@
 ---
 interface Props {
 	section: subsection[];
+	class?: string;
 }
 
 interface subsection {
@@ -11,7 +12,7 @@ interface subsection {
 const { section } = Astro.props;
 ---
 
-<p>
+<p class={Astro.props.class}>
 	{
 		section.map((subsection) => {
 			switch (subsection.type) {
