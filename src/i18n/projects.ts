@@ -120,22 +120,22 @@ A sleek and high-performance Minesweeper game built with React, featuring custom
 		order: 1,
 	},
 
-	{
-		title: "Portfolio",
-		description: {
-			en: `
-                This portfolio is a high-performance, multilingual web portfolio built with Astro, Tailwind CSS, and TypeScript. It emphasizes speed, maintainability, and modern design while ensuring an optimal user experience across devices. The site integrates dynamic content management, supports light/dark mode, and features SEO optimization for better visibility.
-                `,
-			es: `
-            Este es un portafolio web multilingüe de alto rendimiento, construido con Astro, Tailwind CSS y TypeScript. Se centra en la velocidad, la mantenibilidad y un diseño moderno, garantizando una experiencia de usuario óptima en todos los dispositivos. El sitio incorpora gestión dinámica de contenido, soporte para light/dark mode y optimización SEO para una mayor visibilidad.
-            `,
-		},
-		link: "",
-		github: "https://github.com/Peleton-011/portfolio",
-		image: "/website.webp",
-		tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.TS],
-		order: 7,
-	},
+	// {
+	// 	title: "Portfolio",
+	// 	description: {
+	// 		en: `
+    //             This portfolio is a high-performance, multilingual web portfolio built with Astro, Tailwind CSS, and TypeScript. It emphasizes speed, maintainability, and modern design while ensuring an optimal user experience across devices. The site integrates dynamic content management, supports light/dark mode, and features SEO optimization for better visibility.
+    //             `,
+	// 		es: `
+    //         Este es un portafolio web multilingüe de alto rendimiento, construido con Astro, Tailwind CSS y TypeScript. Se centra en la velocidad, la mantenibilidad y un diseño moderno, garantizando una experiencia de usuario óptima en todos los dispositivos. El sitio incorpora gestión dinámica de contenido, soporte para light/dark mode y optimización SEO para una mayor visibilidad.
+    //         `,
+	// 	},
+	// 	link: "",
+	// 	github: "https://github.com/Peleton-011/portfolio",
+	// 	image: "/website.webp",
+	// 	tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.TS],
+	// 	order: 7,
+	// },
 ];
 
 export const TRANSLATE_PROJECTS = (lang: string) => {
