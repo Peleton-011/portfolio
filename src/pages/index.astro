@@ -1,1 +1,13 @@
+---
+import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
 
+import { useTranslations } from "../i18n/utils";
+import Page from "../components/Page.astro";
+
+const t = useTranslations("es");
+---
+
+<Layout title={t("page.title")} description={t("page.description")}>
+	<Page />
+</Layout>
